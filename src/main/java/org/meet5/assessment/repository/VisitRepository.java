@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -30,6 +31,7 @@ public class VisitRepository {
     private static final String CHECK_VISIT_EXISTS_SQL = "SELECT EXISTS(SELECT 1 FROM visits WHERE visitor_id=:visitorId AND visited_id=:visitedId)";
 
 
+    @Transactional
     public void createVisit(long visitorId, long visitedId) {
         jdbcTemplate.update(CREATE_VISIT_SQL, Map.of("visitorId", visitorId, "visitedId", visitedId, "visitDate", LocalDateTime.now()));
     }

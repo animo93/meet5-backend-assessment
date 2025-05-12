@@ -23,7 +23,10 @@ public class UserController {
 
     @PostMapping
     public void createUser(@RequestBody UserDTO userDTO) {
-        userService.createUser(new UserDAO(userDTO.name(), userDTO.age()));
+        var userDAO = new UserDAO();
+        userDAO.setName(userDTO.name());
+        userDAO.setAge(userDTO.age());
+        userService.createUser(userDAO);
     }
 
     @PutMapping("/{id}/visit")

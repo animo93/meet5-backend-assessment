@@ -2,12 +2,10 @@ package org.meet5.assessment.service;
 
 import lombok.AllArgsConstructor;
 import org.meet5.assessment.dao.UserDAO;
-import org.meet5.assessment.dto.UserDTO;
 import org.meet5.assessment.dto.VisitorDTO;
 import org.meet5.assessment.repository.LikeRepository;
 import org.meet5.assessment.repository.UserRepository;
 import org.meet5.assessment.repository.VisitRepository;
-import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

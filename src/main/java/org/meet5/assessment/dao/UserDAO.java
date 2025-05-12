@@ -1,12 +1,12 @@
 package org.meet5.assessment.dao;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
 public class UserDAO {
 
+    private long userId;
     private String name;
     private int age;
+    private String status;
 }
